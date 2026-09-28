@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*========= container of card =========*/
+.register-page {
+    background: #f5f3ff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*======== register info and form card =========*/
+.register-card {
+    width: 100%;
+    max-width: 1100px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.379);
+    background: linear-gradient(135deg, #0e0c21 40%, #1e1b4b, #673de6);
+    color: white;
+    padding: 35px;
+    gap: 4rem;
+    margin: 3rem 0;
+}
+
+/*========= left side style ========*/
+.left-section {
+    flex: 1;
+}
+
+.left-section img {
+    margin-bottom: 2rem;
+}
+
+.left-section h2 {
+    font-weight: 600;
+    font-size: 33px;
+}
+
+.left-section h2 span {
+    color: #673de6;
+}
+
+.left-section .section-description {
+    color: #d2d1d4;
+    font-size: 16px;
+}
+
+.feature {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.feature .feature-icon svg {
+    width: 50px;
+    color: #673de6;
+}
+
+.feature .feature-description b {
+    color: #d2d1d4;
+    font-size: 18px;
+}
+
+.feature .feature-description p {
+    color: #d2d1d4;
+    font-size: 14px;
+}
+
+/*======== right side style ( form side )======== */
+.right-section {
+    flex: 2;
+    min-width: 550px;
+    padding: 1rem 4rem;
+    background-color: white;
+    border-radius: 14px;
+}
+
+.right-section h3 {
+    color: #535d6b;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.right-section .section-description {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.right-section .section-description,
+input::placeholder,
+.divider,
+.login-text {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.register-form .input-group {
+    position: relative;
+    border: 1px solid #64748b;
+    overflow: hidden;
+    border-radius: 7px;
+}
+
+.register-form .input-group .input-icon {
+    position: absolute;
+    top: 50%;
+    left: 0.85rem;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    color: #64748b;
+}
+
+.register-form .input-group input {
+    width: 100%;
+    padding: 0.75rem 0.75rem 0.75rem 2.75rem;
+    border: none;
+    outline: none;
+}
+
+.register-form .input-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+/*=========== buttons ============*/
+.submit {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    margin-top: 10px;
+    border: none;
+    border-radius: 7px;
+    background-color: #673de6;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+    background-color: #5032ab;
+}
+
+.divider {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.google-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    background: white;
+    color: #1e1b4b;
+    font-size: 16px;
+}
+
+.google-btn img {
+    width: 20px;
+    margin-right: 10px
+}
+
+.login-text {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.login-text p span a {
+    color: #1e1b4b;
+    cursor: pointer;
+    text-decoration: none;
+}
+/*=========mini laptop or horizintal tablet=======*/
+@media (max-width:1024px) {
+    .register-card {
+        margin: 0;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .left-section h2 {
+        font-size: 25px;
+    }
+
+    .right-section h3 {
+        font-size: 20px;
+    }
+     .left-section img {
+        width: 240px;
+    }
+    .left-section .section-description {
+        font-size: 14px;
+    }
+
+    .right-section .section-description {
+        font-size: 14px;
+    }
+
+    .feature .feature-description b {
+        font-size: 16px;
+    }
+
+    .feature .feature-description p {
+        color: #d2d1d4;
+        font-size: 14px;
+    }
+
+    .right-section {
+        min-width: 400px;
+        padding: 1rem 2rem;
+        background-color: white;
+        border-radius: 14px;
+    }
+}
+/*============portrait tablet=============*/
+@media (max-width:768px) {
+    .register-card {
+        margin: 0;
+        border-radius: 0;
+        flex-direction: column;
+        height: 100%;
+        gap: 6rem;
+        text-align: center;
+    }
+
+    .feature {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+        align-items: center;
+        text-align: center;
+    }
+}
+/*==============mobile===============*/
+@media (max-width:480px) {
+    .right-section {
+        min-width: 200px;
+        padding: 1rem 2rem;
+        background-color: white;
+        border-radius: 14px;
+    }
+
+    .right-section h3 {
+        font-size: 18px;
+    }
+
+    .right-section .section-description {
+        font-size: 13px;
+    }
+
+    .register-form .input-group input {
+        width: 100%;
+        padding: 0.5rem 0.75rem 0.5rem 2.75rem;
+        border: none;
+        outline: none;
+    }
+
+    .submit {
+        font-size: 14px;
+    }
+
+    .divider {
+        font-size: 14px;
+    }
+
+    .google-btn {
+        font-size: 14px;
+    }
+
+    .left-section img {
+        width: 230px;
+    }
+
+    .left-section h2 {
+        font-size: 20px;
+    }
+
+    .left-section .section-description {
+        font-size: 13px;
+    }
+
+    .feature {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .feature .feature-description b {
+        font-size: 15px;
+    }
+
+    .feature .feature-description p {
+        font-size: 13px;
+    }
+
+    .feature .feature-icon svg {
+        width: 30px;
+        color: #673de6;
+    }
+
+
+}

@@ -1,0 +1,128 @@
+:root {
+  --dark-purple: #5330b8;
+  --main-purple: #673de6;
+  --second-purple: #8b5cf6;
+  --light-purple: #8a5cf63b;
+  --dark-blue: #1e1b4b;
+  --gray: #535d6b;
+  --light-gray: rgb(190, 188, 188);
+  --white: white;
+  --off-white: #f5f3ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.services-section {
+  background-color: var(--white);
+  padding: 10rem 2rem;
+  text-align: center;
+}
+
+.services-mini-tag {
+  background-color: var(--light-purple);
+  color: var(--second-purple);
+  padding: 6px 18px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 18px;
+  letter-spacing: 1.5px;
+}
+
+.services-section h2 {
+  font-size: 2rem;
+  font-weight: 800;
+   color: var(--dark-blue);
+}
+
+.services-subtitle {
+  color: var(--gray);
+  font-size: 1.05rem;
+  max-width: 680px;
+  margin: 0 auto 30px auto;
+  line-height: 1.8;
+  
+}
+
+.showcase-card {
+  background: var(--white);
+  border: 1px solid #f1f5f9;
+  border-radius: 20px;
+  min-width: 280px;
+  padding: 32px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.showcase-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 20px 30px rgba(103, 61, 230, 0.06);
+}
+
+.showcase-img {
+  max-width: 150px;
+  max-height: 150px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.showcase-card:hover .showcase-img {
+  transform: scale(1.06);
+}
+
+.showcase-card h3 {
+  font-size: 1.2rem;
+  color: var(--dark-blue);
+  font-weight: 700;
+}
+
+ .showcase-arrow {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--second-purple);
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+
+.showcase-card:hover .showcase-arrow {
+  opacity: 1;
+  color: var(--main-purple);
+}
+
+.showcase-card:hover .showcase-arrow svg {
+  transform: translateX(5px);
+}
+.showcase-arrow svg {
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 576px) {
+  .services-section {
+    padding: 4rem 2rem;
+  }
+  
+  .showcase-card {
+    width: 100%;
+    
+  }
+}
+

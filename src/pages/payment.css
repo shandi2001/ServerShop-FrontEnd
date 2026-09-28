@@ -1,0 +1,355 @@
+:root {
+    --dark-purple:#5330b8;
+    --main-purple: #673de6;
+    --second-purple: #8b5cf6;
+    --light-purple: #8a5cf63b;
+    --dark-blue: #1e1b4b;
+    --gray: #535d6b;
+    --light-gray: rgb(190, 188, 188);
+    --white: white;
+    --off-white: #f5f3ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.6;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.payment-container {
+    margin: 8rem auto;
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px var(--light-gray);
+}
+
+.payment-header h2 {
+    color: var(--dark-blue);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.payment-header h2 span {
+    color: var(--main-purple);
+}
+
+.payment-header p {
+    color: var(--gray);
+    font-size: 15px;
+    margin-top: 6px;
+}
+
+.payment-methods-slider {
+    position: relative;
+    display: flex;
+    background-color: var(--off-white);
+    border: 1px solid var(--white);
+    padding: 6px;
+    border-radius: 12px;
+    width: 100%;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.method-tab {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--light-gray);
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.method-tab i {
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.slider-glider {
+    position: absolute;
+    top: 6px;
+    bottom: 6px;
+    left: 6px;
+    width: calc(50% - 9px);
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 0px 2px var(--light-gray);
+    z-index: 1;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.payment-methods-slider .slider-glider.cham {
+    transform: translateX(100%);
+}
+
+.method-tab.active {
+    color: var(--dark-blue);
+}
+
+.method-tab.active i {
+    color: var(--main-purple);
+}
+
+
+.animate-fade {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* صندوق تفاصيل الدفع والباركود */
+.payment-details-box {
+    background-color: var(--off-white);
+    border: 1px solid var(--white);
+    border-radius: 12px;
+    padding: 30px;
+    
+}
+
+.method-info-content {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.info-text-side {
+    flex: 1;
+}
+
+.info-text-side h3 {
+    color: var(--dark-blue);
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.info-text-side h3 span {
+    color: var(--main-purple);
+}
+
+.info-text-side h3 i {
+    color: var(--main-purple);
+}
+
+.steps-list {
+    padding-right: 20px;
+    color: var(--dark-blue);
+    font-size: 15px;
+}
+
+
+.steps-list b {
+    color: var(--main-purple);
+}
+
+.account-num {
+    background-color: var(--white);
+    padding: 2px 10px;
+    border-radius: 4px;
+    border: 1px dashed var(--second-purple);
+    color: var(--dark-blue);
+    font-family: monospace;
+    font-size: 16px;
+    margin: 0 4px;
+}
+
+
+.qr-code-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-right: 2rem;
+    min-width: 220px;
+}
+
+.qr-code-side h4 {
+    color: var(--gray);
+    font-size: 13px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.qr-wrapper {
+    background: var(--white);
+    padding: 12px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.qr-wrapper img {
+    width: 150px;
+    height: 150px;
+    display: block;
+}
+
+
+/* فورم إثبات التحويل السفلي */
+.payment-confirmation-form {
+    border-top: 1px solid var(--white);
+    padding-top: 2rem;
+}
+
+.payment-confirmation-form h3 {
+    color: var(--dark-blue);
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.payment-confirmation-form h3 i {
+    color: var(--main-purple);
+    margin-left: 8px;
+}
+
+.form-note {
+    color: var(--gray);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.form-inputs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.pay-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pay-input-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+.pay-input-icon-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.pay-input-icon-wrapper i {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    color: var(--light-gray);
+    font-size: 14px;
+}
+
+.pay-input-icon-wrapper input {
+    width: 100%;
+    padding: 12px 2.5rem 12px 12px;
+    /* عكس السبادينج للتناسب مع rtl */
+    border: 1px solid var(--white);
+    background-color: var(--off-white);
+    border-radius: 8px;
+    font-size: 15px;
+    color: var(--dark-blue);
+    outline: none;
+    transition: 0.2s;
+}
+
+.pay-input-icon-wrapper input[type="file"] {
+    padding: 8px 2.5rem 8px 12px;
+    cursor: pointer;
+}
+
+.pay-input-icon-wrapper input:focus {
+    border-color: var(--main-purple);
+    background-color:var(--white) ;
+}
+
+.payment-buttons-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+}
+
+.btn-confirm-payment {
+    background-color: var(--main-purple);
+    color: var(--white);
+    border: none;
+    padding: 14px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.2s;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-confirm-payment:hover {
+    background-color: var(--dark-purple);
+}
+
+
+@media (max-width: 768px) {
+    .method-info-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .qr-code-side {
+        border-right: none;
+        border-top: 1px dashed var(--white);
+        padding-right: 0;
+        padding-top: 1.5rem;
+        width: 100%;
+    }
+
+    .form-inputs-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .payment-container {
+        padding: 25px;
+    }
+
+    .method-tab {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

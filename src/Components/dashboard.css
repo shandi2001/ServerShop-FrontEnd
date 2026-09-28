@@ -1,0 +1,473 @@
+:root {
+  --dark-navy: #1e1b4b;
+  --royal-purple: #673de6;
+  --vibrant-purple: #8b5cf6;
+  --slate-gray: #64748b;
+  --light-purple: #ede9fe;
+  --soft-bg: #f5f3ff;
+}
+
+.dashboard-container {
+  background-color: var(--soft-bg);
+  padding: 10rem 1.5rem;
+  max-width: 1250px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+}
+
+/* ========= 👤 ستايل سايدبار لوحة التحكم الفخم ========= */
+.dashboard-sidebar {
+  width: 280px;
+  background-color: var(--dark-navy);
+  border-radius: 14px;
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  box-shadow: 0 15px 35px rgba(30, 27, 75, 0.18);
+  align-self: stretch;
+  height: auto;
+}
+
+.user-card-side {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+}
+
+.avatar-circle {
+  width: 48px;
+  height: 48px;
+  background-color: var(--vibrant-purple);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.user-info-text h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.user-info-text p {
+  margin: 3px 0 0 0;
+  font-size: 0.8rem;
+  color: var(--slate-gray);
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sidebar-menu li {
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #d2d1d4;
+}
+
+.sidebar-menu li i {
+  width: 20px;
+  font-size: 1.1rem;
+  color: var(--vibrant-purple);
+}
+
+.sidebar-menu li:hover,
+.sidebar-menu li.active {
+  background-color: var(--royal-purple);
+  color: white;
+}
+
+.sidebar-menu li:hover i,
+.sidebar-menu li.active i {
+  color: white;
+}
+
+.sidebar-logout {
+  margin-top: 40px;
+  padding: 15px 18px 0 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fd0d11;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ========= 🖥️ منطقة المحتوى والتنسيقات الفرعية ========= */
+.dashboard-content {
+  flex: 1;
+  background: white;
+  border-radius: 14px;
+  padding: 35px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.dashboard-content h2 {
+  color: var(--dark-navy);
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+/* أنيميشن ناعم لتبديل الصفحات بجمالية */
+.animate-fade {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* كروت الـ Overview الإحصائية */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.stat-card {
+  background-color: var(--soft-bg);
+  border: 1px solid var(--light-purple);
+  border-radius: 12px;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: 0.2s;
+}
+
+.stat-card:hover {
+  border-color: var(--vibrant-purple);
+  transform: translateY(-3px);
+}
+
+.stat-icon-box {
+  width: 46px;
+  height: 46px;
+  background: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--royal-purple);
+  font-size: 1.25rem;
+  box-shadow: 0 4px 12px rgba(103, 61, 230, 0.06);
+}
+
+.stat-data h3 {
+  margin: 0;
+  color: var(--dark-navy);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.stat-data p {
+  margin: 2px 0 0 0;
+  color: var(--slate-gray);
+  font-size: 0.85rem;
+}
+
+.status-banner {
+  border-left: 4px solid #38d643;
+  background-color: #f0fdf4;
+  padding: 12px 20px;
+  border-radius: 6px;
+  display: inline-flex;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.status-tag {
+  color: #38d643;
+}
+
+.overview-divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 2.5rem 0;
+}
+
+.overview-servers-grid {
+  margin-bottom: 0;
+}
+
+.expiry-alert {
+  margin-top: 4px;
+  color: #dc2626;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* كروت وعروض قسم السيرفرات */
+.servers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.server-card {
+  border: 1px solid var(--light-purple);
+  border-radius: 12px;
+  padding: 22px;
+  background: white;
+}
+
+.server-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.server-card-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--dark-navy);
+}
+
+.server-badge {
+  background-color: #e6fbf1;
+  color: #38d643;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.maintenance-badge {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.server-specs {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+.server-specs li {
+  font-size: 0.9rem;
+  color: var(--slate-gray);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.server-expiry {
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.server-actions {
+  display: flex;
+  gap: 10px;
+}
+.server-actions button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.btn-manage {
+  background-color: var(--royal-purple);
+  color: white;
+}
+.btn-renew {
+  background-color: var(--light-purple);
+  color: var(--royal-purple);
+}
+
+/* قسم الفواتير والدعم والإعدادات */
+.billing-summary-card {
+  background: linear-gradient(135deg, var(--dark-navy), var(--royal-purple));
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+.billing-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+.billing-table th,
+.billing-table td {
+  padding: 14px;
+  border-bottom: 1px solid var(--light-purple);
+  font-size: 0.9rem;
+  text-align: left;
+}
+.billing-table th {
+  background-color: var(--soft-bg);
+  color: var(--dark-navy);
+  font-weight: 600;
+}
+.btn-download {
+  background: none;
+  border: 1px solid var(--royal-purple);
+  color: var(--royal-purple);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.support-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.dash-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 15px;
+}
+.dash-input-group label {
+  font-size: 0.9rem;
+  color: var(--dark-navy);
+  font-weight: 600;
+}
+.dash-input-group input,
+.dash-input-group textarea {
+  padding: 12px;
+  border: 1px solid #dcdbe0;
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.95rem;
+}
+.dash-input-group input:focus,
+.dash-input-group textarea:focus {
+  border-color: var(--royal-purple);
+}
+.btn-submit-ticket,
+.btn-save-settings {
+  background-color: var(--royal-purple);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.ticket-item-card {
+  border: 1px solid var(--light-purple);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+.ticket-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 0.85rem;
+}
+.ticket-number {
+  font-weight: 700;
+  color: var(--dark-navy);
+}
+.ticket-status {
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.avatar-upload-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.avatar-big {
+  width: 65px;
+  height: 65px;
+  background-color: var(--light-purple);
+  color: var(--royal-purple);
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-upload-avatar {
+  background: none;
+  border: 1px dashed var(--royal-purple);
+  color: var(--royal-purple);
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.dash-input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.settings-card-box {
+  border: 1px solid var(--light-purple);
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+.settings-card-box h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: var(--dark-navy);
+}
+
+/* تجاوب الشاشات اللابتوب الصغير والموبايل */
+@media (max-width: 992px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+  .dashboard-sidebar {
+    width: 100%;
+    align-self: auto;
+  }
+  .support-split {
+    grid-template-columns: 1fr;
+  }
+  .dash-input-row {
+    grid-template-columns: 1fr;
+  }
+}

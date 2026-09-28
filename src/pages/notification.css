@@ -1,0 +1,171 @@
+/* 🟣 خلفية كامل الصفحة موف ناعم وفاتح جداً للتناوب المريح */
+.servergo-notifications-page {
+  background-color: #f5f3ff;
+  padding: 100px 20px 60px 20px;
+  min-height: 90vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.notif-page-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* هيدر الصفحة */
+.notif-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 35px;
+  text-align: left;
+}
+
+.notif-page-header h1 {
+  color: #1e1b4b;
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 6px 0;
+}
+
+.notif-page-header p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* زر جعل الكل مقروء */
+.mark-all-read-btn {
+  background: none;
+  border: 1px solid #e9d5ff;
+  color: #7c3aed;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.mark-all-read-btn:hover {
+  background-color: #fbf9ff;
+  border-color: #7c3aed;
+}
+
+/* قائمة الإشعارات المتراصة رأساً */
+.notif-cards-stack-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ⚪ كروت الإشعارات بيضاء صريحة لتبرز بتباين فاخر فوق الخلفية الفاتحة */
+.notif-full-card-item {
+  background: #ffffff;
+  border: 1px solid #e9d5ff;
+  border-radius: 14px;
+  padding: 25px 25px 25px 80px; /* مسافة لترك مساحة للرمز الجانبي */
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.01);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.notif-full-card-item:hover {
+  transform: translateY(-2px);
+  border-color: #c084fc;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.04);
+}
+
+/* كرت مخصص للإشعار الجديد غير المقروء (خلفية موف ناعمة جداً) */
+.notif-full-card-item.is-unread-card {
+  background-color: #fbf9ff;
+  border-color: #d8b4fe;
+}
+
+/* بوكس الرمز اللوني الجانبي */
+.notif-icon-side-box {
+  position: absolute;
+  left: 20px;
+  top: 25px;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+.notif-icon-side-box.success { background-color: #ecfdf5; color: #10b981; }
+.notif-icon-side-box.warning { background-color: #fffbeb; color: #f59e0b; }
+
+/* كتلة النصوص */
+.notif-body-text-box {
+  width: 100%;
+  text-align: left;
+}
+
+.notif-title-row-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.notif-title-row-line h3 {
+  color: #1e1b4b;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.notif-timestamp-txt {
+  color: #9ca3af;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.notif-body-text-box p {
+  color: #4b5563;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 12px 0;
+}
+
+.notif-redirect-action-hint {
+  color: #7c3aed;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+/* نقطة النبض الموف للإشعار الجديد في الزاوية */
+.unread-purple-pulse-dot {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  width: 8px;
+  height: 8px;
+  background-color: #a855f7;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.15);
+}
+
+/* واجهة صندوق فارغ */
+.empty-notif-box {
+  background: #ffffff;
+  border: 1px dashed #e9d5ff;
+  padding: 60px 20px;
+  border-radius: 14px;
+  text-align: center;
+  color: #94a3b8;
+}
+.empty-notif-box i { font-size: 2.5rem; color: #cbd5e1; margin-bottom: 15px; }
+.empty-notif-box h3 { color: #1e1b4b; font-size: 1.2rem; margin: 0 0 5px 0; }
+.empty-notif-box p { font-size: 0.9rem; margin: 0; }
+
+@media (max-width: 600px) {
+  .notif-page-header { flex-direction: column; align-items: flex-start; gap: 15px; }
+  .mark-all-read-btn { width: 100%; text-align: center; }
+  .notif-full-card-item { padding: 20px 20px 20px 75px; }
+  .notif-title-row-line { flex-direction: column; align-items: flex-start; gap: 4px; }
+}

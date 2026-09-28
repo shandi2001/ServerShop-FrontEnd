@@ -1,0 +1,120 @@
+:root {
+  --dark-purple: #5330b8;
+  --main-purple: #673de6;
+  --second-purple: #8b5cf6;
+  --light-purple: #8a5cf63b;
+  --dark-blue: #1e1b4b;
+  --gray: #535d6b;
+  --light-gray: rgb(190, 188, 188);
+  --white: white;
+  --off-white: #f5f3ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.servergo-stats-section {
+  background-color: var(--off-white); 
+  padding:10rem 2rem;
+  text-align: center;
+
+}
+
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stats-mini-tag {
+  background-color: var(--light-purple);
+  color: var(--second-purple);
+  padding: 6px 18px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 18px;
+  letter-spacing: 1.5px;
+}
+
+.servergo-stats-section h2 {
+  font-size: 2rem;
+  font-weight: 800;
+   color: var(--dark-blue);
+}
+
+.stats-subtitle {
+  color: var(--gray);
+  font-size: 1.05rem;
+  max-width: 680px;
+  margin: 0 auto 30px auto;
+  line-height: 1.8;
+  
+}
+
+
+.stats-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+
+.stat-data-card {
+  background: var(--white); 
+  padding: 35px 25px;
+  border-radius: 16px;
+  border: 1px solid var(--light-purple);
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.02);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-data-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(124, 58, 237, 0.06);
+  border-color: var(--second-purple);
+}
+
+.stat-circle-icon {
+  color: var(--main-purple);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  background: var(--white);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-data-card h3 {
+  color: var(--dark-blue);
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.5px;
+}
+
+.stat-data-card p {
+  color: var(--gray);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .servergo-stats-section h2 { font-size: 1.8rem; }
+  .stats-subtitle { font-size: 0.95rem; }
+}

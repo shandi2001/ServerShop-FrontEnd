@@ -1,0 +1,202 @@
+:root {
+  --dark-purple: #5330b8;
+  --main-purple: #673de6;
+  --second-purple: #8b5cf6;
+  --light-purple: #8a5cf63b;
+  --dark-blue: #1e1b4b;
+  --gray: #535d6b;
+  --light-gray: rgb(190, 188, 188);
+  --white: white;
+  --off-white: #f5f3ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.location-section {
+  padding: clamp(4rem, 10vw, 10rem) clamp(1.25rem, 5vw, 3rem);
+  background-color:var(--white);
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: clamp(2.5rem, 6vw, 5rem);
+}
+
+
+.content-side h2 {
+  color: var(--dark-blue); 
+  font-size: clamp(1.8rem, 4vw, 2.3rem);
+  font-weight: 800;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.content-side h2 span {
+  color: var(--main-purple); 
+}
+
+.content-side .section-desc {
+  color: var(--gray); 
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.content-side .section-sub-desc {
+  color: var(--gray);
+  font-size: clamp(0.875rem, 1.4vw, 0.95rem);
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.connection-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--white); 
+  color: var(--main-purple);
+  max-width: 100%;
+  padding: 10px clamp(0.9rem, 2vw, 1.125rem);
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 1.3vw, 0.875rem);
+  line-height: 1.5;
+}
+
+.connection-badge i {
+  color: var(--second-purple); 
+}
+
+/* ==========================================================================
+   🌟 ستايل وهندسة الخريطة التفاعلية ونقاط الإضاءة 🌟
+   ========================================================================== */
+.map-container-wrapper {
+  position: relative;
+  display: inline-block;
+  width: min(100%, 34rem);
+  min-width: 0;
+  margin: 0 auto;
+}
+
+.location-section > .content-side,
+.location-section > .text-center {
+  flex: 1 1 28rem;
+  min-width: 0;
+}
+
+.syria-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* الطبقة العلوية الـ SVG التي تحمل النقاط وتطفو بدقة فوق الخريطة */
+.interactive-svg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* لكي لا تحجب النقر عن العناصر أسفلها */
+}
+
+/* النقطة المركزية الثابتة للمحافظة */
+.city-dot {
+  fill: #673de6; /* بنفسجي ملكي مضيء */
+  stroke: white;
+  stroke-width: 1.5;
+  box-shadow: 0 0 10px #673de6;
+}
+
+/* هالة النبض الضوئي الدائرية المحيطة بالنقطة (الإضاءة المتحركة) */
+.city-pulse {
+  fill: rgba(139, 92, 246, 0.4); /* بنفسجي حيوي شفاف */
+  transform-origin: center;
+  animation: lightPulse 2s infinite ease-out; /* تشغيل أنيميشن النبض */
+}
+
+/* أسماء المحافظات المكتوبة داخل الـ SVG */
+.city-text {
+  font-size: clamp(0.75rem, 1.8vw, 0.9375rem);
+  font-weight: 700;
+  fill: #1e1b4b; /* كحلي داكن مقروء بوضوح */
+  direction: ltr; /* لمنع مشاكل قلب الحروف داخل الـ SVG */
+  filter: drop-shadow(
+    0px 2px 4px white
+  ); /* خلفية بيضاء ناعمة خلف الخط لتتضح فوق لون الخريطة */
+}
+
+@media (max-width: 700px) {
+  .location-section {
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 2.5rem !important;
+  }
+
+  .location-section > .content-side,
+  .location-section > .text-center {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  .content-side h2,
+  .content-side .section-desc,
+  .content-side .section-sub-desc {
+    text-align: center;
+  }
+
+  .connection-badge {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-inline: auto;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1024px) and (orientation: portrait) {
+  .content-side {
+    text-align: center;
+  }
+
+  .connection-badge {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    margin-inline: auto;
+  }
+
+  .map-container-wrapper {
+    width: min(100%, 26rem);
+  }
+}
+
+/* تأخير طفيف بين النبضات للمحافظات لتعطي تأثيراً عشوائياً جذاباً */
+.city-location.aleppo .city-pulse {
+  animation-delay: 0.6s;
+}
+.city-location.latakia .city-pulse {
+  animation-delay: 1.2s;
+}
+@media (max-width: 576px) {
+  .location-section {
+    padding: 4rem 2rem;
+  }
+}
+
+@keyframes lightPulse {
+  0% {
+    transform: scale(0.3);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
