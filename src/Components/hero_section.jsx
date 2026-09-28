@@ -13,7 +13,7 @@ const Hero = () => {
         </span>
         <h1 className="hero-main-title">
           Global server power with{" "}
-          <span className="highlight-text">fully Arab management </span>
+          <span className="highlight-text">fully Syrain management </span>
         </h1>
         <p className="hero-sub-text">
           Give your project the stability it deserves.A comprehensive platform
