@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:7000/api/v1.0.0",
+  baseURL: REACT_APP_API_URL,
   withCredentials: true, // ضروري جداً لكي يتم إرسال واستقبال الـ Cookies (مثل الـ JWT Token)
 });
 
